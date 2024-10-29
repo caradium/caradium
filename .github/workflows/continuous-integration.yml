@@ -1,0 +1,26 @@
+name: Tester
+defaults:
+  run:
+    shell: bash
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+on:
+  push:
+
+jobs:
+  test:
+    name: Test repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+      - name: Install
+        working-directory: ${{ github.workspace }}/repository
+        run: |
+          pip install -r requirements.txt
+      - name: Tests
+        working-directory: ${{ github.workspace }}/repository
+        run: |
+          pytest -sv
