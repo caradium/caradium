@@ -1,0 +1,70 @@
+name: Builder
+permissions:
+  contents: write
+defaults:
+  run:
+    shell: bash
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+env:
+  APP_NAME: service.caradium
+on:
+  push:
+    paths:
+      - repository/**
+  workflow_dispatch:
+
+jobs:
+  builder:
+    name: Builder
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Version
+        id: version
+        working-directory: ${{ github.workspace }}/repository/
+        shell: python
+        run: |
+          import os
+          import xml.etree.ElementTree as etree
+
+          app_name = os.getenv('APP_NAME')
+          github_output_file = os.getenv('GITHUB_OUTPUT')
+
+          xml = etree.parse(f'{app_name}/addon.xml')
+          root = xml.getroot()
+          last_version = root.attrib['version']
+          major, minor, patch = last_version.split('.')
+          new_version = f"{major}.{minor}.{int(patch)+1}"
+          root.attrib['version'] = new_version
+          xml.write(f'{app_name}/addon.xml')
+
+          with open(github_output_file, 'a') as github_output:
+              github_output.write(f"version={new_version}\n")
+
+      - name: Package
+        working-directory: ${{ github.workspace }}/repository/
+        run: |
+          # Zip up the package
+
+          mkdir -p ../builds
+
+          rm -f ../builds/${{ env.APP_NAME }}.zip
+
+          zip -r ../builds/${{ env.APP_NAME }}.zip ${{ env.APP_NAME }}/
+
+      - name: Tag
+        run: |
+          # Commit the version, build and tag the commit
+
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "noreply@ci.github.com"
+
+          git add repository/${{ env.APP_NAME }}/addon.xml
+          git add builds/${{ env.APP_NAME }}.zip
+
+          git commit -m "CI: Adding build for version ${{ steps.version.outputs.version }}" -m "[skip ci]"
+          git tag -a ${{ steps.version.outputs.version }} -m "v${{ steps.version.outputs.version }}"
+          git push origin main
+          git push --tags
