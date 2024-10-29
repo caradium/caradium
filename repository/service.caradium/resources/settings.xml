@@ -1,0 +1,6 @@
+<settings>
+   <category label="33000">
+      <setting label="33001" type="text" enable="false" id="distribution">9.2/Amlogic/arm</setting>
+      <setting label="33002" type="text" enable="false" id="caradium" />
+   </category>
+</settings>

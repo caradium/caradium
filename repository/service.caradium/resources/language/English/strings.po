@@ -1,0 +1,34 @@
+msgid ""
+msgstr ""
+
+msgctxt "#33000"
+msgid "Releases"
+msgstr ""
+
+msgctxt "#33001"
+msgid "Distribution"
+msgstr ""
+
+msgctxt "#33002"
+msgid "Caradium"
+msgstr ""
+
+msgctxt "#33003"
+msgid "{}/{}/{}"
+msgstr ""
+
+msgctxt "#33004"
+msgid "{}/{}/{} after Kodi restart"
+msgstr ""
+
+msgctxt "#33010"
+msgid "Restart Kodi to update Caradium Add-ons to {}/{}/{}"
+msgstr ""
+
+msgctxt "#33011"
+msgid "Now"
+msgstr ""
+
+msgctxt "#33012"
+msgid "Later"
+msgstr ""
