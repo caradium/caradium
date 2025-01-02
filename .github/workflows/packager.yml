@@ -1,0 +1,54 @@
+name: Packager
+permissions:
+  contents: write
+defaults:
+  run:
+    shell: bash
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+# env:
+#   APP_NAME: service.caradium
+on:
+  push:
+    paths:
+      - addons/**
+  workflow_dispatch:
+
+jobs:
+  packager:
+    name: Packager
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Download Script
+        run: |
+          curl https://raw.githubusercontent.com/chadparry/kodi-repository.chad.parry.org/master/tools/create_repository.py --output ./create_repository.py
+          chmod +x create_repository.py
+        working-directory: ${{ github.workspace }}
+      - name: Package
+        working-directory: ${{ github.workspace }}
+        run: |
+          for device in $(ls addons); do
+            pushd addons;
+            for arch in $(ls $device); do
+                pushd $device;
+                pushd $arch;
+                python3 ${{ github.workspace }}/create_repository.py $(ls *.zip);
+                popd;
+                popd;
+            done;
+            popd;
+          done
+      - name: Commit
+        run: |
+          # Commit the addon.xml and any md5 files
+
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "noreply@ci.github.com"
+
+          git add addons/*/*/addons.xml
+          git add addons/*/*/addons.xml.md5
+
+          git commit -m "CI: Adding new addons files" -m "[skip ci]"
+          git push origin main
