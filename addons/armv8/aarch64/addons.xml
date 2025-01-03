@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<addons><addon id="service.transmission" name="Transmission" version="1.0.2" provider-name="caradium">
+<addons><addon id="service.transmission" name="Transmission" version="1.0.3" provider-name="caradium">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
 
