@@ -34,7 +34,7 @@ jobs:
             for arch in $(ls $device); do
                 pushd $device;
                 pushd $arch;
-                python3 ${{ github.workspace }}/create_repository.py $(ls -d */);
+                python3 ${{ github.workspace }}/create_repository.py $(ls */*.zip);
                 popd;
                 popd;
             done;
