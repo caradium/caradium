@@ -18,7 +18,20 @@ The add-ons are built with the CoreELEC build system to run on the CoreELEC oper
 
 ## Installation
 
-TODO:
+The Caradium Addons repository needs to be installed from a zip file.
+
+Download the [latest release from here](https://github.com/caradium/caradium/releases/latest/download/service.caradium.zip).
+
+Move the zip file to a location that can be accessed from Kodi, for example to the downloads [SMB share](https://wiki.libreelec.tv/accessing_libreelec#tab__sambasmb) LibreELEC.
+
+Then, use Kodi to install the Add-ons repository from the downloaded zip file, as described [here](https://kodi.wiki/view/Add-on_manager#How_to_install_from_a_ZIP_file).
+
+The Caradium Add-ons repository will reconfigure itself based on the device's architecture.
+
+Finally, restart Kodi for the reconfiguration to take effect.
+
+You can now manage (install, update, uninstall, etc.) all the add-ons of the Caradium Add-ons repository with the Kodi Add-on manager, as described [here](https://kodi.wiki/view/Add-on_manager).
+
 
 ## Add-on Summary
 
