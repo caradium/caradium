@@ -187,11 +187,13 @@ def test_get_addon_xml(mocker):
 
     assert next(e for e in root.iter('extension') if e.attrib['point'] == 'xbmc.service').attrib['library'] == 'default.py'
 
-    for e in next(e for e in root.iter('extension') if e.attrib['point'] == 'xbmc.addon.repository'):
+    for e in next(e for e in root.iter('dir')):
         assert e.text == 'TBD'
         assert e.tag in ['datadir', 'info', 'checksum']
         if e.tag == 'datadir':
             assert e.attrib['zip'] == 'true'
+        if e.tag == 'info':
+            assert e.attrib['compressed'] == 'false'
 
 def test_update_addon_xml(setup):
     addon = TestAddon(addon_directory=setup)
@@ -206,7 +208,7 @@ def test_update_addon_xml(setup):
     xml = default.update_addon_xml(addon, 'http://github/url/')
 
     root =  xml.getroot()
-    for e in next(e for e in root.iter('extension') if e.attrib['point'] == 'xbmc.addon.repository'):
+    for e in next(e for e in root.iter('dir')):
         assert e.text != 'TBD'
         assert e.tag in ['datadir', 'info', 'checksum']
         if e.tag == 'datadir':
