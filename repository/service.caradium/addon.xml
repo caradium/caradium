@@ -6,9 +6,11 @@
     <provides />
   </extension>
   <extension point="xbmc.addon.repository">
-    <datadir zip="true">TBD</datadir>
-    <info>TBD</info>
-    <checksum>TBD</checksum>
+    <dir>
+      <datadir zip="true">TBD</datadir>
+      <info compressed="false">TBD</info>
+      <checksum>TBD</checksum>
+    </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary>Caradium Add-ons Repository</summary>
