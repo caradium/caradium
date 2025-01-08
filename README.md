@@ -37,13 +37,14 @@ You can now manage (install, update, uninstall, etc.) all the add-ons of the Car
 
 | Port                                | Add-on                                            | Function                 | Status                   |
 | ----------------------------------- | ------------------------------------------------- | ------------------------ | ------------------------ |
-| [6767](http://libreelec.local:6767) | [Bazarr](https://github.com/morpheus65535/bazarr) | subtitle manager         | Maybe                    |
-| [8686](http://libreelec.local:8686) | [Lidarr](https://lidarr.audio/)                   | music manager            | Maybe                    |
-| [8081](http://libreelec.local:8081) | [Medusa](https://github.com/pymedusa/Medusa)      | series manager           | Will do                  |
-| [7878](http://libreelec.local:7878) | [Radarr](https://radarr.video/)                   | movie manager            | Maybe                    |
-| [8989](http://libreelec.local:8989) | [Sonarr](https://sonarr.tv/)                      | series manager           | Will do                  |
-| [9091](http://libreelec.local:9091) | [Transmission](https://transmissionbt.com/)       | bittorrent manager       | Will do                  |
-|                                     | [ZeroTier One](https://www.zerotier.com/)         | virtual private network  | Probably                 |
+| [9091](http://coreelec.local:9091) | [Transmission](https://transmissionbt.com/)       | bittorrent manager       | Done                     |
+| [8989](http://coreelec.local:8989) | [Sonarr](https://sonarr.tv/)                      | series manager           | Done                     |
+| [9696](http://coreelec.local:9696) | [Prowlarr](https://prowlarr.com)                  | indexer manager/proxy    | Done                     |
+| [8081](http://coreelec.local:8081) | [Medusa](https://github.com/pymedusa/Medusa)      | series manager           | Will do                  |
+| [7878](http://coreelec.local:7878) | [Radarr](https://radarr.video/)                   | movie manager            | Maybe                    |
+| [8686](http://coreelec.local:8686) | [Lidarr](https://lidarr.audio/)                   | music manager            | Maybe                    |
+| [6767](http://coreelec.local:6767) | [Bazarr](https://github.com/morpheus65535/bazarr) | subtitle manager         | Maybe                    |
+|                                    | [ZeroTier One](https://www.zerotier.com/)         | virtual private network  | Probably                 |
 
 ## Feedback
 
