@@ -9,7 +9,7 @@
     <dir>
       <datadir zip="true">TBD</datadir>
       <info compressed="false">TBD</info>
-      <checksum>TBD</checksum>
+      <checksum compressed="false">TBD</checksum>
     </dir>
   </extension>
   <extension point="xbmc.addon.metadata">
