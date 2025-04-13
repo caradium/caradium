@@ -575,6 +575,49 @@ v1.0.1  (2025-01-02)
 
     </assets>
   </extension>
+</addon><addon id="service.transmission" name="Transmission" version="1.1.0" provider-name="caradium">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+
+  </requires>
+  <extension point="xbmc.service" library="default.py">
+    <provides />
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Transmission: a fast, easy and free BitTorrent client</summary>
+    <description>
+Transmission (3.00) is a fast, easy and free BitTorrent client.
+    </description>
+    <disclaimer>
+Keep it legal and carry on
+    </disclaimer>
+    <platform>all</platform>
+    <news>
+
+v1.1.0  (2025-04-13)
+- added a patch for openssl 3
+
+v1.0.4  (2025-04-12)
+- build for arm
+
+v1.0.3  (2025-01-07)
+- fixed description
+
+v1.0.2  (2025-01-07)
+- added fanart
+
+v1.0.1  (2025-01-02)
+- Initial version
+
+    </news>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+<screenshot>resources/screenshot-1.jpg</screenshot>
+<screenshot>resources/screenshot-2.jpg</screenshot>
+
+    </assets>
+  </extension>
 </addon><addon id="virtual.icu4c" name="icu4c" version="1.0.0" provider-name="caradium">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
