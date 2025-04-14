@@ -348,6 +348,44 @@ v1.0.1  (2025-02-14)
 
     </assets>
   </extension>
+</addon><addon id="service.radarr" name="Radarr" version="1.0.2" provider-name="caradium">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+
+  </requires>
+  <extension point="xbmc.service" library="default.py">
+    <provides />
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Radarr: a movie collection manager for Usenet and BitTorrent users</summary>
+    <description>
+Radarr is a movie collection manager for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new movies and will interface with clients and indexers to grab, sort, and rename them. It can also be configured to automatically upgrade the quality of existing files in the library when a better quality format becomes available.
+    </description>
+    <disclaimer>
+Keep it legal and carry on
+    </disclaimer>
+    <platform>all</platform>
+    <news>
+v1.0.2  (2025-04-13)
+- build for arm
+- download the correct archive for the architecture
+
+v1.0.1  (2025-02-14)
+- enable execution of ffprobe 
+
+v1.0.0  (2025-02-04)
+- Initial version
+
+    </news>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+<screenshot>resources/screenshot-1.jpg</screenshot>
+<screenshot>resources/screenshot-2.jpg</screenshot>
+<screenshot>resources/screenshot-3.jpg</screenshot>
+
+    </assets>
+  </extension>
 </addon><addon id="service.sonarr" name="Sonarr" version="1.0.1" provider-name="caradium">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
